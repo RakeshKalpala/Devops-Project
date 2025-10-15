@@ -1,0 +1,17 @@
+trigger:
+  - main   # change to your branch name if different
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+  - script: echo "✅ Build started for $(Build.Repository.Name)"
+    displayName: 'Start Build'
+
+  - script: |
+      echo "Installing dependencies..."
+      # You can add npm install, pip install etc here
+    displayName: 'Install Dependencies'
+
+  - script: echo "🎉 CI pipeline completed successfully!"
+    displayName: 'Finish'
